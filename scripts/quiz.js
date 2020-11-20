@@ -14,15 +14,10 @@ class Quiz{
         return data.trivia_categories;
     }
 
-    async getQuiz(amount, category, difficulty, type) {
-
+    async getQuiz(amount, category) {
         let query = `${this.URL}?amount=${amount}`;
         if(category !== "any")
             query+=`&category=${category}`;
-        if(difficulty !== "any")
-            query+=`&difficulty=${difficulty}`;
-        if(type !== "any")
-            query+=`&type=${type}`;
         let data;
         const response = await fetch(query);
         if( response.status === 200)

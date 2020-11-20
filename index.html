@@ -18,9 +18,6 @@
                             </path>
                         </svg>
                     </button>
-                <form action="">
-                    <input type="text" class="px-2 py-1 rounded-full shadow-lg outline-none hidden" placeholder="your name">
-                </form>
             </div>
         </div>
     </header>
@@ -32,28 +29,12 @@
             <div class="flex flex-col font-mono py-5 md:flex-row">
                 <div class="mx-auto">
                     <input type="text" id="no-of-qtns" class="
-                    block mx-auto my-2 w-64 h-12 text-center outline-none text-white text-sm bg-gray-600 rounded-lg placeholder-gray-400" 
+                    block mx-auto my-2 w-64 h-12 text-center outline-none text-white text-sm bg-gray-600 rounded-lg placeholder-gray-400 shadow-lg" 
                     placeholder="Number of questions Ex:10"
                     >
                     <select name="cat" id="cat" class="mx-auto my-2 px-5 w-64 h-12 outline-none text-white text-sm bg-gray-600 rounded-lg placeholder-gray-400">
                         <option value="" disabled selected>Select Category</option>
                         <option value="any">Any</option>
-                    </select>
-                </div>
-    
-                <div class="mx-auto">
-                    <select name="difficulty" id="diff" class="block mx-auto my-2 w-64 px-5 h-12 outline-none text-white text-sm bg-gray-600 rounded-lg placeholder-gray-400">
-                        <option value="" disabled selected>Select Difficulty</option>
-                        <option value="any">Any</option>
-                        <option value="Easy">Easy</option>
-                        <option value="medium">Medium</option>
-                        <option value="hard">Hard</option>
-                    </select>
-                    <select name="type" id="type" class="mx-auto my-2 w-64 px-5 h-12 outline-none text-white text-sm bg-gray-600 rounded-lg placeholder-gray-400">
-                        <option value="" disabled selected>Select type</option>
-                        <option value="any">Any</option>
-                        <option value="multiple">Multiple Choice</option>
-                        <option value="boolean">True or False</option>
                     </select>
                 </div>
             </div>
@@ -72,10 +53,21 @@
 
     <!-- Q&A -->
 
+    <div class="w-4/5 mx-auto font-mono tracking-wide bg-white my-4 hidden shadow-lg rounded-lg" id="quiz-container">
+        <form action="" id="quiz">
 
+        </form>  
 
+    </div>
+    <!-- Q&A end -->
 
+    <!-- score card -->
+    <div class="w-4/5 mx-auto bg-white shadow-lg rounded-b-lg font-sans">
+        <p class="font-sans font-bold py-6 text-center hidden border-b border-gray-400" id="score"></p>
+        <div id="quiz-summary">
 
+        </div>
+    </div>
 
 
     <!-- timer -->
