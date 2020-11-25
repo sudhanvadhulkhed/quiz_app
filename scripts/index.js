@@ -48,11 +48,30 @@ const renderQuiz = (data) => {
 // setup event listeners
 btn.addEventListener("click", e => {
     let preName = userName.textContent;
-    let name = prompt("Enter your pretty name");
-    if(!name) {
-        name=preName;
-    }
-    userName.textContent=`${name}`;
+    let setName;
+    swal({
+        title:'Edit your name',
+        content: {
+            element: "input",
+            attributes: {
+              placeholder: "Type your pretty name",
+              type: "input",
+            },
+        },
+        buttons:{
+            cancel: true,
+            confirm: true
+        },
+    }).then(name => {
+        setName = name ? name : preName;
+        userName.textContent=`${setName}`;
+        if (name) {
+            swal({
+                text:'Name updated successfully',
+                icon:'success'
+            })
+        }
+    })
 });
 
 // fetch question from api
