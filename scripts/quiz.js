@@ -15,6 +15,7 @@ class Quiz{
     }
 
     async getQuiz(amount, category) {
+        console.log(amount);
         let query = `${this.URL}?amount=${amount}`;
         if(category !== "any")
             query+=`&category=${category}`;

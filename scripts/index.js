@@ -7,6 +7,7 @@ const amount = document.querySelector("#no-of-qtns");
 const quiz = document.querySelector("#quiz");
 const quizContainer = document.querySelector("#quiz-container");
 const main = document.querySelector("main");
+const appBtn = document.querySelector("#refresh-page");
 
 
 let questions = [];
@@ -74,9 +75,15 @@ btn.addEventListener("click", e => {
     })
 });
 
+appBtn.addEventListener('click', () => {
+    location.reload();
+});
+
 // fetch question from api
 quizForm.addEventListener("submit", e => {
     e.preventDefault();
+    if(amount.value === '')
+        amount.value=10;
     q.getQuiz(amount.value, selectCat.value)
     .then( data => renderQuiz(data.results) )
     .catch( err => console.log(err));
